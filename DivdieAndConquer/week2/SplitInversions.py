@@ -25,6 +25,6 @@ def merge_and_count_split_inversions(left, right):
         else:
             result[k] = right[j]
             j += 1
-            # split inversions increment by # of elements left in left
+            # increase split_inv by # of elements remaining in left array
             split_inversions += half_n - i
     return result, split_inversions
