@@ -2,3 +2,4 @@
 /.idea
 DivideAndConquer/week*/data/
 NOTES.md
+__pycache__

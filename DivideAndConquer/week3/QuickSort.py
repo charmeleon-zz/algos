@@ -29,7 +29,7 @@ def partition(A, left, right):
     # A[k] < pivot for k ϵ {left + 1, ..., i - 1}
     # A[k] > pivot for k ϵ {i, ..., A[j - 1] are all greater than the
     # j marks the boundary of unpartitioned elements
-    for j in range(pivot_index + 1, right):
+    for j in range(i, right + 1):
         # TODO can avoid redundant swaps by keeping track of whether we have seen any elements bigger than the pivot
         if A[j] < pivot:
             # swap leftmost element bigger than the pivot
