@@ -15,14 +15,14 @@ def sort_and_count_inv(array):
 # Input: sorted arrays left and right (size n/2 each)
 # Output: sorted array (length n) and number of split inversions
 def merge_and_count_split_inversions(left, right):
-    i = j = k = 0
+    i = j = 0
     result = []
     split_inversions = 0
     size_left = len(left)
     size_right = len(right)
 
     while i < size_left and j < size_right:
-        if left[i] < right[j]:
+        if left[i] <= right[j]:
             result.append(left[i])
             i += 1
         else:
@@ -30,16 +30,13 @@ def merge_and_count_split_inversions(left, right):
             j += 1
             # increase split_inv by # of elements remaining in left array
             split_inversions += size_left - i
-        k += 1
     # merge stragglers
     while i < size_left:
         result.append(left[i])
-        k += 1
         i += 1
 
     while j < size_right:
         result.append(right[j])
-        k += 1
         j += 1
     return result, split_inversions
 
